@@ -27,14 +27,18 @@ def main():
     line = stdin.readline().strip().split()
     while (line[-1] != '0'):
         events = []
-        # events = [int(line[0]),line[1]]
         consume = [int(line[-1])]
         while (line[1] != 'Valhalla'):
             line = stdin.readline().strip().split()
             events.append([int(line[0]), line[1]])
             if (line[1] == 'consumo'):
                 consume.append(int(line[-1]))
-
+        # In this case I set maximum_tank_capcity to be 10_000 just
+        # because I knew that is the upper bound, in your case you
+        # have to simulate the whole travel without taking in to account
+        # nor the Guardia nor the Oasis, just the Disparo and Consumo
+        # this would give you and upper bound for each case, this can be
+        # done in linear time.
         minimum_tank_capacity, maximum_tank_capacity, ans = 0, 10_000, 0
         almost_zero = 10**(-9)
         while (abs(minimum_tank_capacity - maximum_tank_capacity)
