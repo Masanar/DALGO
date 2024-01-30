@@ -5,32 +5,10 @@ import sys
 # given limit and the total value is maximum
 
 
-def knap_sack_recursion(
-    weight_limit: int, item_pointer: int, values: list[int], weights: list[int]
-) -> int:
-    return_value = -1
-    next_item = item_pointer - 1
-    if weight_limit == 0 or item_pointer == 0:
-        return_value = 0
-    if weights[next_item] > weight_limit and return_value == -1:
-        return_value = knap_sack_recursion(weight_limit, next_item, values, weights)
-    elif return_value == -1:
-        return_value = max(
-            values[next_item]
-            + knap_sack_recursion(
-                weight_limit - weights[next_item], next_item, values, weights
-            ),
-            knap_sack_recursion(weight_limit, next_item, values, weights),
-        )
-    return return_value
-
-
 def knap_sack_dp(
     weight_limit: int, item_pointer: int, values: list[int], weights: list[int]
 ) -> int:
     pass
-
-
 
 
 if __name__ == "__main__":
@@ -43,5 +21,5 @@ if __name__ == "__main__":
         # # sys.stdout.write(str(result))
         # print(result)
 
-        t = [[-1 for i in range(W + 1)] for j in range(len(values) + 1)] 
-        print(knapsack(weights,values,W,len(values)))
+        t = [[-1 for i in range(W + 1)] for j in range(len(values) + 1)]
+        print(knapsack(weights, values, W, len(values)))
