@@ -31,12 +31,17 @@ def knap_sack_dp(
     pass
 
 
+
+
 if __name__ == "__main__":
     number_of_cases = int(sys.stdin.readline().strip())
     for _ in range(number_of_cases):
         values = list(map(int, sys.stdin.readline().split()))
         weights = list(map(int, sys.stdin.readline().split()))
         W = int(sys.stdin.readline().strip())
-        result = knap_sack_recursion(W, len(values), values, weights)
-        # sys.stdout.write(str(result))
-        print(result)
+        # result = knap_sack_recursion(W, len(values), values, weights)
+        # # sys.stdout.write(str(result))
+        # print(result)
+
+        t = [[-1 for i in range(W + 1)] for j in range(len(values) + 1)] 
+        print(knapsack(weights,values,W,len(values)))
