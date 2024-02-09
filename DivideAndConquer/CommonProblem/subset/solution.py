@@ -24,6 +24,7 @@ if __name__ == "__main__":
         print(subset_recursion(0, target, number_list))
 
 
+
 """ 
 def subsetSum(A, n, k):
     # Taken from: https://www.techiedelight.com/subset-sum-problem/

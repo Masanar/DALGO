@@ -20,7 +20,7 @@ def knap_sack_recursion(
             + knap_sack_recursion(
                 weight_limit - weights[next_item], next_item, values, weights
             ),
-            knap_sack_recursion(weight_limit, next_item, values, weights),
+            knap_sack_recursion(weight_limit, next_item, values, weights)
         )
     return return_value
 
