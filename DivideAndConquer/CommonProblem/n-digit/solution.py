@@ -1,17 +1,19 @@
 import sys
 
 def n_digit(depth, previous_digit):
+    digit_count = 0
     if depth == 0:
         return 0
     if depth == 1:
         if previous_digit:
-            return 1
+            digit_count = 1
         else:
-            return 2
-    if previous_digit:
-        return n_digit(depth - 1, 0)
-    else:
-        return n_digit(depth - 1, 0) + n_digit(depth - 1, 1)
+            digit_count = 2
+    elif previous_digit:
+        digit_count = n_digit(depth - 1, 0)
+    elif not previous_digit:
+        digit_count = n_digit(depth - 1, 0) + n_digit(depth - 1, 1)
+    return digit_count
 
 
 if __name__ == "__main__":
