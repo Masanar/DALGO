@@ -1,8 +1,8 @@
 import sys
-
+# 0 -> False
 def n_digit(depth, previous_digit):
     digit_count = 0
-    if depth == 0:
+    if not depth:
         return 0
     if depth == 1:
         if previous_digit:
