@@ -4,13 +4,11 @@ import random
 def lis(array):
     l = len(array)
     LIS = [1] * l
-    # max_LIS = 0
     for i in range(1,l):
         max_lis_sub = 0
         for k in range(i):
             if array[k] < array[i]:
                 max_lis_sub =  max(max_lis_sub,LIS[k])
-        # max_LIS = max(1 + max_lis_sub, max_LIS)
         LIS[i] = 1 + max_lis_sub 
     return max(LIS) 
 

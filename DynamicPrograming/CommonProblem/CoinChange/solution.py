@@ -11,7 +11,25 @@ def CoinChange_noDP(value: int, coins: list[int]) -> int:
             return_value = min(return_value, 1 + CoinChange_noDP(value - coin, coins))
     return return_value
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
+
+# memo = [return_value] * (value + 1)
 def CoinChange_TD(value: int, coins: list[int], memo: list[int]) -> int:
     return_value = 1_000_000_000_000
     if value == 0:
@@ -28,6 +46,13 @@ def CoinChange_TD(value: int, coins: list[int], memo: list[int]) -> int:
         memo[value] = return_value
     return return_value
 
+    
+    
+    
+    
+    
+
+
 
 def CoinChange_BU(value: int, coins: list[int]) -> int:
     return_value = 1_000_000_000_000
@@ -39,6 +64,8 @@ def CoinChange_BU(value: int, coins: list[int]) -> int:
             if coin <= i:
                 memo[i] = min(memo[i], memo[i - coin] + 1)
     return memo[value]
+
+
 
 def generate_value():
     for _ in range(100):
@@ -52,8 +79,8 @@ if __name__ == "__main__":
     number_of_test = int(sys.stdin.readline().strip())
     for _ in range(number_of_test):
         value = int(sys.stdin.readline().strip())
-        sys.stdout.write(str(CoinChange_BU(value, [50, 25, 5, 1])))
-        sys.stdout.write('\n')
-        # memo = [return_value] * (value + 1)
-        # print(CoinChange_TD(value, [50, 25, 5, 1], memo))
+        # sys.stdout.write(str(CoinChange_BU(value, [50, 25, 5, 1])))
+        # sys.stdout.write('\n')
+        memo = [return_value] * (value + 1)
+        print(CoinChange_TD(value, [50, 25, 5, 1], memo))
         # print(CoinChange_noDP(value, [50, 25, 5, 1]))
