@@ -10,7 +10,9 @@ def main():
     N = stdin.readline().strip()
     while N != '':
         x,y = stdin.readline().split()
-        print(str(f(int(x),int(y),int(N))))
+        value = str(f(int(x),int(y),int(N)))
+        string = f'El {N}-nombre es {value}\n'
+        stdout.write(string)
         N = stdin.readline().strip()
 
 if __name__ == '__main__':
