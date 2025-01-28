@@ -11,7 +11,7 @@ def main():
     while N != '':
         x,y = stdin.readline().split()
         value = str(f(int(x),int(y),int(N)))
-        string = f'El {N}-nombre es {value}\n'
+        string = f'El {N}-nombre es: {value}\n'
         stdout.write(string)
         N = stdin.readline().strip()
 
