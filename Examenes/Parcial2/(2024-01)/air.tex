@@ -1,0 +1,85 @@
+\newpage
+\subsection*{Aeropuertos}
+
+Un catálogo de aerolíneas consiste en una lista de vuelos entre pares de ciudades. Un
+viaje puede ser construido secuenciando vuelos. Dos compañías aéreas son equivalentes si
+ofrecen conexiones entre los mismos pares de ciudades, es decir, la diferencia entre el
+numero de vuelos totales por conexiones es menor o igual a tres. Dados los catálogos de
+dos compañías aéreas, determina si son equivalentes o no.
+
+\subsubsection*{Entrada}
+La entrada comienza con un único número entero positivo en una línea por sí misma
+indicando el número de casos siguientes, cada uno de ellos como se describe a
+continuación. Esta línea va seguida de una línea en blanco, y también hay una línea en
+blanco entre dos entradas consecutivas. La entrada contiene:
+\begin{itemize}
+    \item Primera línea: el número N de vuelos en el catálogo de la primera compañía;
+
+    \item N líneas siguientes: dos caracteres del alfabeto en mayúsculas separados por un
+    espacio, para los nombres de las ciudades de origen y destino de un vuelo;
+
+    \item Línea N + 2: el número M de vuelos en el catálogo de la segunda compañía;
+
+    \item M líneas siguientes: dos caracteres del alfabeto en mayúsculas separados por un
+    espacio, para los nombres de las ciudades de origen y destino de un vuelo.
+\end{itemize}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{7cm}|p{7cm}|}
+        \hline
+        \textbf{Entrada} & \textbf{Salida} \\
+        \hline
+        \begin{tabular}{@{}l@{}}
+            1 \\
+            6 \\
+            A B \\
+            B E \\
+            A E \\
+            C F \\
+            E C \\
+            D A \\
+            7 \\
+            A B \\
+            D A \\
+            E C \\
+            C F \\
+            D B \\
+            B E \\
+            D F \\
+        \end{tabular} &
+        NO \\
+        \hline
+    \end{tabular}
+    \label{tab:input_output}
+\end{table}
+
+
+
+
+% \begin{table}[htbp]
+%     \centering
+%     \caption{Entrada y Salida}
+%     \begin{tabular}{|p{5cm}|p{5cm}|}
+%         \hline
+%         \textbf{Entrada} & \textbf{Salida} \\
+%         \hline
+%         2 & Caso 1 \\
+%         3 4 & 0.250000 \\
+%         NYY & Caso 2 \\
+%         YNY & 0.795918 \\
+%         YYN & 0.341108 \\
+%         1 & \\
+%         1 3 1 & \\
+%         4 7 & \\
+%         NYNN & \\
+%         YNYN & \\
+%         NYNY & \\
+%         NNYN & \\
+%         2 & \\
+%         1 3 10 & \\
+%         1 4 10 & \\
+%         \hline
+%     \end{tabular}
+%     \label{tab:entrada_salida}
+% \end{table}

@@ -1,0 +1,46 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[left=0.8in, top=0.7in, total={6.2in,8in}]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Parcial 3	Supletorio\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: 13/12/2022 	\hfill  2022-20		\hfill Nota máxima: 50}
+\par 
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+
+\begin{questions}
+	\pointsdroppedatright
+
+    \question \textbf{(+5pts)} Consideremos un algoritmo de Kruskal "invertido" para calcular un MST. Inicializar T para ser el conjunto de todas las aristas en el grafo. Ahora, considera las aristas de mayor a menor coste. Para cada arista, elimínela de T si esa arista pertenece a un ciclo en T. (No importa cómo implementar esto. Sólo hay que tener en cuenta que union-find no permite eliminaciones). Asumiendo que todos los costes de las aristas son distintos, este nuevo algoritmo calcula correctamente calcula correctamente un MST?
+    \question \textbf{(+5pts)} Explique detalladamente la razón por la cual \texttt{traveling-salesman} pertenece a la clase $NP$, si toma la definición dada en [Boh1992] para la clase $NP$ la explicación seria diferente?
+    \question  \textbf{(+20pts)} Demuestre que si cualquier problema $NP-completo$ es solucionable en tiempo polinomial, entonces $P=NP$. Equivalentemente, si cualquier problema en $NP$ no es solucionable en tiempo polinómico, entonces ningún problema $NP-completo$ es solucionable en tiempo polinomial.
+    \question \textbf{(+20pts)} Demuestre que el problema del ciclo hamiltoniano es $NP-completo$.
+\end{questions}
+\end{document}

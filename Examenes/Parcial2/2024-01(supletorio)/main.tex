@@ -1,0 +1,66 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[left=0.2in, top=0.2in, right=0.2in]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Parcial 2	\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: 15 Abril 2014	\hfill  2024-01		\hfill Nota máxima: 50}
+\par 
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+
+\begin{questions}
+	\pointsdroppedatright
+	\question \textbf{(15pts)}  El árbol de maxima expansion (MET) es un árbol de
+	expansion con un peso mayor o igual que el peso de cualquier otro árbol de expansion.
+	\textbf{describa} (y justifique porque es valido) un algoritmo que reciba un grafo
+	cargado completamente conectado y retorne su correspondiente MET. Complejidad
+	esperada: \textbf{$\mathcal{O}(E \times log \ V)$}.
+
+	\question  \textbf{(15pts)} Suponga que aparte de la capacidad de los caminos la red
+    de flujo se tiene \textbf{capacidad en los nodos}. Es decir, para cada nodo $n$, se
+    tiene un limite $l(n)$ que limita cuanto flujo puede pasar por $n$. Proponga como
+    transformar una red de flujo $G=(V,E)$ con capacidad en nodos a una red de flujo
+    equivalente $G'=(V',E')$ que no tiene capacidad en los nodos, de tal forma que el
+    flujo máximo de $G$ y $G'$ es el mismo. Ademas de una formula para la cantidad de
+    nodos y caminos de $G'$ 
+
+
+	\question \textbf{(20pts)} Solucione el problema \textbf{Mariposas}  
+	usando algún algoritmo visto en clase, puede modificarlo de ser necesario, de no ser
+	asi el punto no es valido. Se describe I/O para ejemplificar, si embargo puede asumir
+	que tiene un función auxiliar que le hace la carga de datos, Si decide hacer esto debe
+	estar claro el funcionamiento de dicha función (i.e. entradas y salidas).  Puede
+	usar comentarios para hacer aclaraciones. Presente un \textbf{algoritmo (Java,
+	Python...)} que solucione el problema, no es valida una solución en palabras. 
+	
+
+\end{questions}
+\input{love.tex}
+\end{document}

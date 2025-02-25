@@ -1,0 +1,81 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[left=0.2in, top=0.2in, right=0.2in]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Parcial 2	\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: 21 Octubre 2024	\hfill  2024-02		\hfill Nota máxima: 100}
+\par 
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+
+\begin{questions}
+	\pointsdroppedatright
+
+	\question \textbf{(25pts)} Mateo propone que una forma de saber si un grafo contiene
+	ciclos es tomar la matriz de adyacencia del grafo, remplazar la diagonal por un valor
+	muy alto $\infty$ y ejecutar el algoritmo de Floyd-Warshall. Ahora bien no es claro
+	que se después de esto. Explique si la propuesta de Mateo es correcta o no y por qué.
+	De ser correcta complete el procedimiento para saber si el grafo contiene ciclos o no.
+	De ser incorrecta de un contraejemplo.
+	
+	\question \textbf{(25pts)} Suponga que, además de capacidades en las aristas, una red
+	de flujo tiene capacidades en los vértices. Es decir, cada vértice \(v\) tiene un
+	límite \(l(v)\) sobre cuánta cantidad de flujo puede pasar a través de \(v\). Muestra
+	cómo transformar una red de flujo \(G = (V, E)\) con capacidades en los vértices en
+	una red de flujo equivalente \(G' = (V', E')\) sin capacidades en los vértices, de tal
+	manera que un flujo máximo en \(G'\) tenga el mismo valor que un flujo máximo en
+	\(G\). ¿Cuántos vértices y aristas tiene \(G'\)?
+
+
+
+
+	\question \textbf{(50pts)} Proponga una implementación para la función \verb|airports|
+	que recibe como parámetros el costo de construir un aeropuerto y el grafo (edge list) 
+	asociado a un caso de prueba del problema de aeropuertos. La función da
+	solución al caso retornando el costo mínimo y el número de aeropuertos a construir. 
+
+
+	\begin{lstlisting}
+	airports(airport_build_cost: int, graph: list[(int, int, int)]) 
+		-> [min_cost:int, number_airports: int]
+	\end{lstlisting}
+
+	Para la implementación puede hacer uso de los algoritmos:
+	\verb|DFS,BFS,Kruskal,Floyd-warshall| y \verb|Edmonds-Karp|. Sin embargo, se espera
+	que deje claro cuales son las entradas y salidas de cada algoritmo que decida
+	utilizar. \textbf{Si esto no es claro o incorrecto su punto no sera valido}. La
+	complejidad de la solución no debe ser mayor a $O(ElogE)$ \textbf{de los contrario no
+	sera valido el punto}. 
+	
+	
+
+\end{questions}
+\input{air.tex}
+\end{document}

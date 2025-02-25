@@ -1,0 +1,79 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[left=0.2in, top=0.2in, right=0.2in]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Parcial 2 Supletorio	\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: \today 	\hfill  2022-20		\hfill Nota máxima: 50}
+\par 
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+
+\begin{questions}
+	\pointsdroppedatright
+	% UVA 558
+	\question \textbf{(20pts)} En el año 2049 se descubrieron los agujeros de gusano. Un agujero de gusano es un túnel que a traviesa el espacio y el tiempo. Los agujeros de gusano tienen algunas propiedades peculiares:
+     \begin{itemize}
+         \item Los agujeros de gusano son unidireccionales.
+         \item El tiempo que se tarda en viajar a través de un agujero de gusano es insignificante.
+         \item Un agujero de gusano tiene dos extremos, cada uno situado en un sistema estelar.
+         \item Un sistema estelar puede tener más de un punto final de agujero de gusano dentro de sus límites.
+         \item No hay agujeros de gusano con ambos puntos finales en el mismo sistema estelar.
+         \item Todos los agujeros de gusano tienen una diferencia de tiempo constante entre sus puntos finales. Por ejemplo, un agujero de gusano puede hacer que la persona que viaja a través de él termine 15 años en el futuro. Otro agujero de gusano puede hacer que la persona termine 42 años en el pasado.
+     \end{itemize}
+    Una física brillante que vive en la Tierra quiere utilizar los agujeros de gusano para estudiar el Big Bang. Para esto ella encontró la forma de viajar al pasado usando los agujeros de gusano. Escriba un algoritmo (escrito en \verb|Java,Python,c|) que le permita a ella saber si es posible hacer esto. Los sistema estelares serán nombrados usando números naturales: 0,1,2,... nuestro sistema estelar es el 0. Su algoritmo recibirá una lista de la siguiente manera: 
+    \begin{verbatim}
+    [ cantidad_sistamas_estelares: Nat, 
+      cantidad_agujero_gusano: Nat, 
+      viajes_agujeros_gusano: List[List[Int]]]
+    ]
+    \end{verbatim}
+    Donde un ejemplo de la lista \verb|viajes_agujeros_gusano| puede ser: \verb|[0,4,20]|. \textbf{Significando que una persona puede viajar por un agujero de gusano para llegar del sistema estelar 0 al 4 pero terminará 20 años en el futuro}. \textbf{Dada una entrada como la descrita anteriormente, su algoritmo debe responder True cuando sea posible viajar al Big Bang y False en otro caso. La complejidad máxima del algoritmo debe ser $\mathcal{O}(cantidad\_sistamas\_estelares^3)$}. A continuación se muestran algunos ejemplos:
+
+    \begin{verbatim}
+    [2,2[[0,1,-1],[1,0,0]]] -> True
+    
+    [4,4,[[0 1 10],[1 2 20],[2 3 30],[3 0 -60]] -> False
+
+    [3,3,[[0,1,1000],[1,2,15],[2,1,-42]] -> True
+    
+    [6,10,[[3,0,119],[1,4,-267],[3,1,232],[5,0,-87],[3,2,466],[0,2,-172],
+                   [0,4,18],[1,5,537],[3,5,-307],[0,3,844]]] -> False
+    \end{verbatim}
+    
+	\question  \textbf{(15pts)} Igor está en el museo y quiere ver el mayor número posible de cuadros. El museo puede representarse como un campo rectangular de n × m celdas. Cada casilla está vacía o es infranqueable. Las casillas vacías están marcadas con '.', las casillas infranqueables están marcadas con '*'. Cada dos celdas adyacentes de distinto tipo (una vacía y otra infranqueable) están divididas por una pared que contiene una imagen. Al principio, Igor se encuentra en una casilla vacía. En cada momento puede moverse a cualquier casilla vacía que comparta un lado con la actual. Para varias posiciones de partida debes calcular el número máximo de cuadros que Igor puede ver. Igor sólo puede ver una imagen si se encuentra en la celda adyacente a la pared donde está la imagen. Igor tiene mucho tiempo (esto no se relaciona con la complejidad del algoritmo), así que examinará todas las imágenes que pueda ver.
+    \textbf{Describa un algoritmo que reciba dos parámetros de entrada: la representación del museo y la posición de inicio de Igor y devuelva el numero máximo de cuadro que Igor puede ver. Adicional describa como dará representación al museo. }
+
+ 
+	\question (\textbf{(15pst}) El profesor Adam tiene dos hijos que, por desgracia, no se gustan. El problema es tan grave que no sólo se niegan a ir juntos al colegio, sino que, de hecho, cada uno de ellos se niega a pisar cualquier cuadra que el otro niño haya pisado ese día. 
+Los niños no tienen ningún problema en que sus caminos se crucen en una esquina. Afortunadamente, tanto la casa del profesor como la escuela están en las esquinas, pero más allá de eso no está seguro de que vaya a ser posible enviar a sus dos hijos a la misma escuela. El profesor tiene un mapa de su ciudad. Muestre cómo formular el problema de determinar si sus dos hijos pueden ir a la misma escuela como un problema de flujo máximo, \textbf{justifique!}.
+	
+
+\end{questions}
+\end{document}

@@ -1,0 +1,100 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[margin=0.7in]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{enumerate}% http://ctan.org/pkg/enumerate
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    }
+
+\urlstyle{same}
+
+\input{macros.tex}
+
+\begin{document}
+%\thispagestyle{empty}
+\noindent
+\begin{minipage}[l]{0.1\textwidth}
+    \noindent
+    \includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+    \begin{center}
+        {\large \textbf{Ingeniería de Sistemas y Computación} \par
+            \large	Diseño y análisis de algoritmos	\par
+            \small  Profesor: Mateo Sanabria Ardila	\par
+            \small  Examen 1	\par
+        }
+    \end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: 13/Septiembre 	\hfill  2024-20		\hfill Nota máxima: \textbf{100} }
+\par
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+
+
+
+\begin{questions}
+    \pointsdroppedatright
+    \question
+    Natalia y Tatiana están trabajando en un nuevo algoritmo de enrutamiento de paquetes,
+    para dispositivos IoT en una estación petrolera. Los dos algoritmos solucionan el 
+    problema. Sin embargo, debido a las limitaciones de Computación de los dispositivos IoT
+    donde se ejecutara el algoritmo deben escoger el algoritmo con la mejor complejidad
+    temporal. Para facilitar la tarea del equipo de calidad ellas calculan las ecuaciones
+    de recurrencia de los algoritmos y basadas en ello tomaran decision de cual algoritmo 
+    elegir:
+    \begin{itemize}
+        \item Tatianas: $ (n-1)T(n) = (n-2)T(n-1) + n$
+        \item Natalias: $ T(n) = 5\sqrt{T(n-1)}$
+    \end{itemize}
+    
+    \begin{parts}
+        \part[] \textbf{50pts} Basado en temas vistos en la clase argumente cual 
+        de los dos algoritmos debería ser escogido.  
+    \end{parts}
+    \question
+    Mateo es muy malo en matemáticas: suele usar una calculadora, que le funcionó bien
+    durante la universidad. Desafortunadamente, ahora está atrapado en una isla desierta
+    con su buen amigo Diego tras un accidente de snowboard. Ahora están tratando de pasar
+    el tiempo resolviendo algunos problemas interesantes.
+
+    Es un problema muy sencillo: dado un número $N$, ¿cuántas maneras hay de que $K$
+    números menores que $N$ y pares sumen $N$?
+
+    Por ejemplo, para $N=20$ y $K=2$ existen 21 maneras: $0+20,1+19,\cdots,20+0$.
+
+    \begin{parts}
+
+        \part[] \textbf{(5pts)} Identifique cuales pueden ser los subproblem repetidos
+        para este problema, explique que estructura de datos le puede ayudar a no repetir
+        problemas. De un ejemplo, expliquelo y justifique porque esa forma de memoizacion
+        subproblemas puede ayudar a solucionar el problema.
+
+        \part[] \textbf{(40pts)} Proponga la implementación de una función \verb|Add(N,K)|
+        basada en programación  dinámica que solución el problema. Utilice \verb|Python,Java,...| 
+        (\textbf{No es valido respuesta en `palabras'}) para describir la función.
+        Complejidad esperada $\mathcal{O}(N^2 K^2)$, no es la mejor
+        complejidad para resolver el problema, mas bien entiéndase como una cota superior.
+        Si su solución corre en menos de esta cota (y soluciona el problema) su punto
+        sera valido de lo contrario el punto completo sera invalido.
+
+        \part[] \textbf{(5pts)}Explique cual es la complejidad temporal de la solución del punto anterior.
+
+    \end{parts}
+\end{questions}
+
+\end{document}

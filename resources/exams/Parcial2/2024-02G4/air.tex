@@ -1,0 +1,43 @@
+\newpage
+\subsection*{ ¿Queda una segunda opción?}
+
+
+Jesus, siendo el programador más talentoso de su tiempo, no puede pensar que las cosas sean
+tan simples. Recientemente, todos sus vecinos han decidido conectarse entre sí mediante
+una red (en realidad, todos quieren compartir una conexión de internet de banda ancha
+:-)). Pero él quiere minimizar el costo total del cable necesario, ya que es un poco
+exigente con los gastos del proyecto. Por alguna razón desconocida, también quiere que
+quede una segunda opción. Es decir, quiere saber el segundo mejor costo (si es que existe
+alguno que pueda ser igual al mejor costo) para el proyecto. Estoy seguro de que él es
+capaz de resolver el problema. Pero está muy ocupado con sus asuntos privados y seguirá
+así. Entonces, es tu turno de demostrar que eres un buen programador. 
+
+\section*{Entrada}
+
+La entrada comienza con un número entero \(t \leq 1000\), que indica el número de casos de
+prueba a manejar. Luego siguen \(t\) conjuntos de datos, donde cada conjunto comienza con
+un par de enteros \(v\) (\(1 \leq v \leq 100\)) y \(e\) (\(0 \leq e \leq 200\)). \(v\)
+denota el número de vecinos y \(e\) denota el número de conexiones directas permitidas
+entre ellos. Las siguientes \(e\) líneas contienen la descripción de las conexiones
+directas permitidas, donde cada línea tiene el formato ‘inicio fin costo’, donde inicio y
+fin son los dos extremos de la conexión y costo es el costo de la conexión. Todas las
+conexiones son bidireccionales y puede haber múltiples conexiones entre dos extremos.
+
+\section*{Salida}
+
+Puede haber tres casos en la salida:
+
+\begin{enumerate}
+    \item No hay manera de completar la tarea.
+    \item Solo hay una manera de completar la tarea.
+    \item Hay más de una manera.
+\end{enumerate}
+
+Imprime ‘No way’ para el primer caso, ‘No second way’ para el segundo caso y un número
+entero \(c\) para el tercer caso, donde \(c\) es el segundo mejor costo. La salida para
+cada caso debe comenzar en una nueva línea.
+
+
+
+
+

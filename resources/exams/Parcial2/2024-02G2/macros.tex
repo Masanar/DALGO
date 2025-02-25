@@ -1,0 +1,104 @@
+% document version
+\newcommand{\docver}{\input{version}}
+
+% predefined sets
+\newcommand{\bools}{\mathbb{B}}
+\newcommand{\nats}{\mathbb{N}}
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\rats}{\mathbb{Q}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\mts}{\{\}}
+
+% fonts for several objects
+\newcommand{\fsys}[1]{\mathsf{#1}}
+\newcommand{\fset}[1]{\mathtt{#1}}
+\newcommand{\fval}[1]{\mathbf{#1}}
+\newcommand{\fsub}[1]{{#1}}
+\newcommand{\frlnm}[1]{{\sc #1}}
+\newcommand{\extfval}[1]{\overline{\fval{#1}}}
+\newcommand{\extfsub}[1]{\overline{\fsub{#1}}}
+\newcommand{\fsett}[1]{\mathcal{#1}}
+\newcommand{\ff}[1]{\mathit{#1}}
+\newcommand{\fp}[1]{\mathit{#1}}
+\newcommand{\sort}[2]{{#1}{:}{#2}}
+
+% abbreviations
+\newcommand{\fsF}{\fsys{F}}
+\newcommand{\DS}{\fsys{DS}}
+\newcommand{\DSL}{{\fsys{DS}(\mathcal{L})}}
+\newcommand{\LARR}{\mathcal{L}_A}
+
+% Boolean elements
+\newcommand{\eF}{\fset{F}}
+\newcommand{\eT}{\fset{T}}
+
+% global sets
+\newcommand{\vprop}{\fsett{V}}
+\newcommand{\prop}{\fsett{T}(\vprop)}
+\newcommand{\vars}{\fsett{X}}
+\newcommand{\funcs}{\fsett{F}}
+\newcommand{\preds}{\fsett{P}}
+\newcommand{\lang}{\fsett{L}}
+\newcommand{\arity}{\textit{ar}}
+\newcommand{\terms}{\fsett{T}_\funcs(\vars)}
+\newcommand{\forms}{\fsett{T}_{(\funcs,\preds)}(\vars)}
+\newcommand{\srest}[2]{{#2}_{\triangleleft {#1}}}
+
+% logical connectives
+\newcommand{\STRUE}{\mathit{true}}
+\newcommand{\SFALSE}{\mathit{false}}
+\newcommand{\SIFF}{\equiv}
+\newcommand{\SXOR}{\not\equiv}
+\newcommand{\SOR}{\lor}
+\newcommand{\SAND}{\land}
+\newcommand{\SNEG}{\neg}
+\newcommand{\SIMP}{\rightarrow}
+\newcommand{\SCON}{\leftarrow}
+\newcommand{\SALL}{\forall}
+\newcommand{\SEX}{\exists}
+
+% macros for proposiciones
+\newcommand{\TRUE}{\STRUE}
+\newcommand{\FALSE}{\SFALSE}
+\newcommand{\IFF}[2]{(#1 \SIFF #2)}
+\newcommand{\XOR}[2]{(#1 \SXOR #2)}
+\newcommand{\OR}[2]{(#1 \SOR #2)}
+\newcommand{\AND}[2]{(#1 \SAND #2)}
+\newcommand{\NEG}[1]{({\SNEG}#1)}
+\newcommand{\IMP}[2]{(#1 \SIMP #2)}
+\newcommand{\CON}[2]{(#1 \SCON #2)}
+\newcommand{\ALL}[2]{(\SALL{#1}\,{#2})}
+\newcommand{\EX}[2]{(\SEX{#1}\,{#2})}
+
+\newcommand{\AIFF}[2]{#1 \SIFF #2}
+\newcommand{\AXOR}[2]{#1 \SXOR #2}
+\newcommand{\AOR}[2]{#1 \SOR #2}
+\newcommand{\AAND}[2]{#1 \SAND #2}
+\newcommand{\ANEG}[1]{{\SNEG}#1}
+\newcommand{\AIMP}[2]{#1 \SIMP #2}
+\newcommand{\ACON}[2]{#1 \SCON #2}
+\newcommand{\AALL}[2]{\SALL{#1}\,{#2}}
+\newcommand{\AEX}[2]{\SEX{#1}\,{#2}}
+\newcommand{\QALL}[3]{(\SALL{#1}\mid {#2}: {#3})}
+\newcommand{\QEX}[3]{(\SEX{#1}\mid {#2}: {#3})}
+\newcommand{\QALLS}[2]{\left(\SALL{#1}\mid : {#2}\right)}
+\newcommand{\QEXS}[2]{\left(\SEX{#1}\mid : {#2}\right)}
+
+
+% other syntax
+\newcommand{\tsub}[3]{#1\!\left[{#2}:={#3}\right]}
+\newcommand{\divs}[2]{{#1}\,{\cdot|}\,{#2}}
+
+% environments
+\newenvironment{calc}{\begin{array*}}{\end{array*}}
+%\newenvironment{calc}{\begin{align*}}{\end{align*}}
+\newcommand{\expr}[1]{ & \; {#1} \\}
+\newcommand{\exprnnl}[1]{ & {#1}}
+\newcommand{\expl}[2]{#1 & \quad \langle \; \textnormal{#2} \;\rangle \\}
+
+
+\newcommand{\con}[3]{ #1 \overset{#2}{=} #3}
+\newcommand{\oexists}[3]{(\exists {#1} \ | \ #2  : \  #3  )}
+\newcommand{\oall}[3]{(\forall {#1} \ | \  #2  : \  #3  )}
+\newcommand{\hoare}[3]{\{{#1}\} \{{#2}\} \{{#3}\}}
+\usepackage{listings}

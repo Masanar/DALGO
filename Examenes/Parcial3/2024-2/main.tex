@@ -1,0 +1,94 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[left=0.5in, top=0.5in, right=0.5in]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Examen 3	\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: Diciembre 02 	\hfill  2024-20		\hfill Nota máxima: 120}
+\par 
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+\begin{questions}
+    \pointsdroppedatright
+
+    \question \textbf{(+70 pts)} 
+    Eres un desarrollador en Facebook, y tu equipo está planeando implementar una nueva 
+    funcionalidad para analizar patrones de conectividad entre usuarios. En particular,
+    necesitas determinar si toda la red de amigos de un usuario, representada como un 
+    grafo \( G_B = (V_B, E_B) \), puede encontrarse como un subconjunto dentro de la red 
+    de amigos de otro usuario más grande, representada como un 
+    grafo \( G_A = (V_A, E_A) \).
+
+    El problema consiste en decidir si es posible asignar cada persona en \( G_B \) a una
+    persona única en \( G_A \) de tal manera que:  
+    \begin{itemize}
+        \item Cada persona en \( G_B \) se mapea a una persona en \( G_A \).  
+        \item Cada amistad entre dos personas en \( G_B \) corresponde a una amistad entre
+        sus contrapartes asignadas en \( G_A \).
+    \end{itemize}
+
+    Mientras exploras este problema, te das cuenta de que es computacionalmente complicado
+    , y tu jefe te solicita justificar por qué ocurre esto. Para esto debes:
+
+    \begin{enumerate}
+        \item \textbf{(+5 pts)}  Mostrar el lenguaje aceptado del problema de decisión asociado.
+        \item \textbf{(+15 pts)} Mostrar que el problema pertenece a NP.  
+        \item \textbf{(+50 pts)} Mostrar que el problema es NP-completo. 
+    \end{enumerate}
+
+    Para cualquier algoritmo que proponga debe utilizar pseudocódigo o lenguaje de su 
+    preferencia. Una explicación en palabras no sera validad como algoritmo. Cualquier 
+    justificación de complejidad debe ser justificada sobre los algoritmos propuestos.
+    Especifique las entradas y salidas de los algoritmos propuestos. \textbf{Si cualquiera 
+    de los anteriores puntos es incumplido no se otorgará puntaje}.
+
+	\question (\textbf{+20 pst}) Supongamos que generalizamos el problema de la cobertura de
+    conjuntos de modo que cada conjunto \(S_i\) en la familia \(F\) tiene un peso asociado \(w_i\) y 
+	el peso de una cobertura \(C\) es \(\sum_{S_i \in C} w_i\). La idea es determinar una 
+	cobertura de peso mínimo. 
+
+	Muestre cómo generalizar (\textbf{pseudocódigo}) de manera natural 
+    \textit{GREEDY-SET-COVER} para proporcionar una solución aproximada a cualquier 
+    instancia del problema de cobertura de conjuntos cargados.
+
+
+    \question \textbf{(+20 pts)} Basado en técnicas vistas en clase, implemente una 
+    función (\textbf{CÓDIGO: Python, Java...}) para imprimir todas las secuencias
+    válidas (es decir, correctamente abiertas y eventualmente cerradas) de $n$ pares de
+    paréntesis.  \textbf{Noy hay puntos intermedios, para tener los puntos completos debe
+    proporcionar código que ejecute correctamente la tarea, salvo errores de sintaxis.}
+    \begin{verbatim}
+    # Muestra por consola todas las secuencias válidas de n pares de paréntesis 
+        printParenthesis(n: int) -> None
+    \end{verbatim}
+
+\end{questions}
+
+
+\end{document}

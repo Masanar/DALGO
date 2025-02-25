@@ -1,0 +1,84 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[left=0.2in, top=0.2in, right=0.2in]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Parcial 2	\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: \today 	\hfill  2022-20		\hfill Nota máxima: 50}
+\par 
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+
+\begin{questions}
+	\pointsdroppedatright
+	% UVA 558
+	\question \textbf{(20pts)} En el año 2049 se descubrieron los agujeros de gusano. Un agujero de gusano es un túnel que a traviesa el espacio y el tiempo. Los agujeros de gusano tienen algunas propiedades peculiares:
+     \begin{itemize}
+         \item Los agujeros de gusano son unidireccionales.
+         \item El tiempo que se tarda en viajar a través de un agujero de gusano es insignificante.
+         \item Un agujero de gusano tiene dos extremos, cada uno situado en un sistema estelar.
+         \item Un sistema estelar puede tener más de un punto final de agujero de gusano dentro de sus límites.
+         \item Por alguna razón desconocida, partiendo de nuestro sistema solar, siempre es posible acabar en cualquier sistema estelar siguiendo una secuencia de agujeros de gusano.
+         \item Entre cualquier par de sistemas estelares hay como máximo un agujero de gusano en cada dirección.
+         \item No hay agujeros de gusano con ambos puntos finales en el mismo sistema estelar.
+         \item Todos los agujeros de gusano tienen una diferencia de tiempo constante entre sus puntos finales. Por ejemplo, un agujero de gusano puede hacer que la persona que viaja a través de él termine 15 años en el futuro. Otro agujero de gusano puede hacer que la persona termine 42 años en el pasado.
+     \end{itemize}
+    Una física brillante que vive en la Tierra quiere utilizar los agujeros de gusano para estudiar el Big Bang. Para esto ella encontró la forma de viajar al pasado usando los agujeros de gusano. Escriba un algoritmo (escrito en \verb|Java,Python,c|) que le permita a ella saber si es posible hacer esto. Los sistema estelares serán nombrados usando números naturales: 0,1,2,... nuestro sistema estelar es el 0. Su algoritmo recibirá una lista de la siguiente manera: 
+    \begin{verbatim}
+    [ cantidad_sistamas_estelares: Nat, 
+      cantidad_agujero_gusano: Nat, 
+      viajes_agujeros_gusano: List[List[Int]]]
+    ]
+    \end{verbatim}
+    Donde un ejemplo de la lista \verb|viajes_agujeros_gusano| puede ser: \verb|[0,4,20]|. \textbf{Significando que una persona puede viajar por un agujero de gusano para llegar del sistema estelar 0 al 4 pero terminará 20 años en el futuro}. \textbf{Dada una entrada como la descrita anteriormente, su algoritmo debe responder True cuando sea posible viajar al Big Bang y False en otro caso. La complejidad máxima del algoritmo debe ser $\mathcal{O}(cantidad\_sistamas\_estelares^3)$}. A continuación se muestran algunos ejemplos:
+
+    \begin{verbatim}
+    [2,2[[0,1,-1],[1,0,0]]] -> True
+    
+    [4,4,[[0 1 10],[1 2 20],[2 3 30],[3 0 -60]] -> False
+
+    [3,3,[[0,1,1000],[1,2,15],[2,1,-42]] -> True
+    
+    [6,10,[[3,0,119],[1,4,-267],[3,1,232],[5,0,-87],[3,2,466],[0,2,-172],
+                   [0,4,18],[1,5,537],[3,5,-307],[0,3,844]]] -> False
+    \end{verbatim}
+    
+	\question  \textbf{(10pts)} El árbol de máxima expansión (MET) es un árbol de expansión con un peso mayor o igual que el peso de cualquier otro árbol de expansión. Diseñe un algoritmo que reciba un grafo cargado completamente conectado y retorne su correspondiente MET. Complejidad esperada: \textbf{$\mathcal{O}(E \times log \ V)$}.
+
+
+ 
+	\question  \textbf{(20pts)}  Para los siguientes puntos se espera una argumentación valida, basada en definiciones, teoremas, axiomas,... mencionados en la bibliografía acerca de las redes de flujo. \textbf{No se espera una demostración, per se. Pero si una argumentación justificada en la teoría.}
+	\begin{parts}
+        \part \textbf{(10pts)} Suponga que la red de flujo \verb|G| contiene la arista \verb|(u,v)| se crea un nueva red de flujo \verb|G'| creando un nuevo vértice \verb|x| y sustituyendo \verb|(u,v)| por nuevas aristas \verb|(u,x)| y \verb|(x,v)| tal que \verb|c(u,x)=c(x,v)=c(u,v)|. Demuestre que un flujo máximo en \verb|G'| tiene el mismo valor que un flujo máximo en \verb|G|.
+        \part \textbf{(10pts)} Suponga que una red de flujo \verb|G =(V,E)| no cumple la suposición de que, para cualquier nodo $v \in V$, el camino $s \rightarrow v \rightarrow t$ se encuentra en la red. Se $u$ un vértice de la red para el cual no se cumple que $s \rightarrow u \rightarrow t$. Demuestre que debe existir un flujo máximo $f$ tal que $f(u,n)=f(v,n)=0$ para todo $n \in V$.
+    \end{parts}
+	
+
+\end{questions}
+\end{document}

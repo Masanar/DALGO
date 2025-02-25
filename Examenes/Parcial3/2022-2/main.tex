@@ -1,0 +1,46 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[left=0.8in, top=0.7in, total={6.2in,8in}]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Parcial 3	\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: 11/12/2022 	\hfill  2022-20		\hfill Nota máxima: 50}
+\par 
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+
+\begin{questions}
+	\pointsdroppedatright
+    \question \textbf{(+5pts)} Explique detalladamente la razón por la cual \texttt{vertex-cover} pertenece a la clase $NP$, si toma la definición dada en [Boh1992] para la clase $NP$ la explicación seria diferente?
+    \question \textbf{(+5pts)} Suponga que tenemos un grafo no dirigido con pesos que pueden ser positivos o negativos. Pueden \texttt{Prim} y \texttt{Kruskal} producir un \texttt{MST} para dicho grafo?
+    \question \textbf{(+10pts)} Muestre que para cualquier grafo no dirigido con pesos en el que los pesos son distintos (no hay dos aristas tienen el mismo peso), el \texttt{MST} es único.
+    \question  \textbf{(+10pts)} Demuestre que la reducción polinomial $\leq_P$ es una relación transitiva.
+    \question \textbf{(+20pts)} El problema de isomorfismo de subgrafos toma dos grafos no dirigidos $G_1$ y $G_2$ , y se pregunta si $G_1$ es isomorfo a un subgrafo de $G_2$ . Demuestre que el problema de isomorfismo de subgrafos es es NP-completo.
+\end{questions}
+\end{document}

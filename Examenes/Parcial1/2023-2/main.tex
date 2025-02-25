@@ -1,0 +1,78 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[margin=0.7in]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{enumerate}% http://ctan.org/pkg/enumerate
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    }
+
+\urlstyle{same}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Examen 1	\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: 18/Septiembre 	\hfill  2023-20		\hfill Nota máxima: 60}
+\par 
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+
+
+\begin{questions}
+	\pointsdroppedatright
+         \question \textbf{(10pts)} Soluciones las siguientes ecuaciones de recurrencia y 
+         determine el orden de complejidad:
+    \begin{parts}
+        \part[10]  $T(n) =  2T(\frac{n}{4}) + log_4(n) $
+    \end{parts}
+	\question 
+    Dadas dos strings (w1,w2) se quiere conocer cual es el numero mínimo de
+    operaciones, inserciones, eliminaciones y remplazo para llegar de w1 a w2. Por ejemplo, si
+    se tiene w1=‘This’ y w2=‘That’ el numero mínimo de operaciones es 2. Remplazar la ‘i’ por
+    una ‘a’ y la ‘s’ por una ‘t’.
+    \begin{parts}
+        \part[]  \textbf{(10pts)} Proponga una solución basada en la estrategia de dividir
+        y conquistar que solucione el problema.
+        \part[]  \textbf{(10pts)} Proponga la expresion de T(n) para la solución anterior
+        y calcule la complejidad.
+        \part[] \textbf{(10pts)} Identifique los subproblem repetidos en la solución anterior,
+        explique que estructura de datos le puede ayudar a no repetir problemas. De un ejemplo.
+        \part[] \textbf{(10pts)} Proponga una solución basada en programación  dinámica
+        que solución el problema. Cual es la complejidad temporal y por qué es mejor que la 
+        solución anterior.
+        \part[] \textbf{(10pts (Bono))} 
+        Basado en la anterior solución, como se puede utilizar la tabla para ademas de obtener
+        el numero minimo de operaciones se obtenga la secuencia de operaciones necesarias 
+        para llegar de w1 a w2.
+    \end{parts}
+\end{questions}
+
+\end{document}

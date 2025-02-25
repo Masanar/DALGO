@@ -1,0 +1,63 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[left=0.8in, top=0.7in, total={6.2in,8in}]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Parcial 2	\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: \today 	\hfill  2022-20		\hfill Nota máxima: 50}
+\par 
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+
+\begin{questions}
+	\pointsdroppedatright
+	
+	\question \textbf{(15pts)} Un grafo bipartito, es un grafo tal que el conjunto de nodos se puede expresar como dos conjuntos disjuntos, de manera que no hay dos nodos del mismo conjunto que sean adyacentes. Diseñe un algoritmo que reciba un grafo, en su implantación indique si su grafo esta implementado como lista o matriz de adyacencia, y retorne $True$ si el grafo es bipartito y $False$ en otro caso. La complejidad no debe superar $\mathcal{O}(|V||E|)$, donde $V$ es el conjunto de nodos y $E$ el conjunto de arcos del grafo. 
+	\begin{parts}
+        \part \textbf{(10pts)} Implemente un algoritmo que solucione el problema.
+        \part \textbf{(5pts)} Explique la complejidad temporal de la implementación que propuso.
+    \end{parts}
+
+	
+	\question \textbf{(17pts)} Dada una cadenas/arreglo de números este problema consiste en encontrar la \textbf{longitud} de la subsecuencia alternarte mas larga que esta contenida en la cadena/arreglo dado. Por ejemplo, para \texttt{A = [7,10,6,4,5,7,0,2,5]} la longitud es 6,  la subsecuencia es \texttt{[7,10,6,7,0,5]}. La complejidad temporal esperada es como máximo $\mathcal{O}(n^2)$.
+	
+	\begin{parts}
+        \part \textbf{(7pts)} Explique, en palabras, la solución \textbf{usando programación dinámica} para este problema.
+        \part \textbf{(10pts)} Implemente un algoritmo que solucione el problema.
+    \end{parts}
+	
+	\question  \textbf{(18pts)}  Dada una cadenas/arreglo de números este problema consiste en encontrar la o las subsecuencias bitonicas mas larga que esta contenida en la cadena/arreglo dado. Su implementación debe entregar una lista que contenga las subsecuencias bitonicas mas largas. La complejidad temporal esperada es como máximo $\mathcal{O}(n^2)$.
+	\begin{parts}
+        \part \textbf{(8pts)} Explique, en palabras, la solución \textbf{usando programación dinámica} para este problema.
+        \part \textbf{(10pts)} Implemente un algoritmo que solucione el problema.
+    \end{parts}
+	
+
+\end{questions}
+\end{document}

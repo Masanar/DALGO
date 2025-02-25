@@ -1,0 +1,85 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[margin=0.7in]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{enumerate}% http://ctan.org/pkg/enumerate
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    }
+
+\urlstyle{same}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Examen 1 - Supletorio	\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: 12/Octubre 	\hfill  2023-20		\hfill Nota máxima: 60}
+\par 
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+
+
+\begin{questions}
+	\pointsdroppedatright
+         \question \textbf{(10pts)} Soluciones las siguientes ecuaciones de recurrencia y 
+         determine el orden de complejidad:
+    \begin{parts}
+        \part[10]  $T(n) =  4T(\frac{n}{2}) + log_2(n) $
+    \end{parts}
+	\question 
+
+    Dado un conjunto de $N$ elementos donde cada elemento tiene asociado un peso y un 
+    beneficio, y también dado un bolso con capacidad $W$ (es decir, el bolso puede contener 
+    como máximo W peso). La tarea es colocar los elementos en el bolso de manera que la 
+    suma de los beneficios asociados a ellos sea lo máximo posible.
+
+    \textbf{Nota}: La restricción aquí es que se puede colocar un elemento completamente en el bolso
+    o no ponerlo en absoluto, no es posible colocar una parte de un elemento en el bolso.
+
+    \textbf{Input}: N = 3, W = 4, beneficio = {1, 2, 3}, peso = {4, 5, 1}
+    \textbf{Output}: 3
+
+    \textbf{Input}: N = 3, W = 3, beneficio = {1, 2, 3}, peso = {4, 5, 6}
+    \textbf{Output}: 3
+
+    \begin{parts}
+        \part[]  \textbf{(10pts)} Proponga una solución basada en la estrategia de dividir
+        y conquistar que solucione el problema.
+        \part[]  \textbf{(5pts)} Proponga la expresion de T(n) para la solución anterior
+        y calcule la complejidad.
+        \part[] \textbf{(5pts)} Identifique los subproblem repetidos en la solución anterior,
+        explique que estructura de datos le puede ayudar a no repetir problemas. De un ejemplo.
+        \part[] \textbf{(20pts)} Proponga una solución basada en programación  dinámica
+        que solución el problema. Cual es la complejidad temporal y por qué es mejor que la 
+        solución anterior. \textbf{La complejidad DEBE ser de O(NW)}
+    \end{parts}
+\end{questions}
+
+\end{document}

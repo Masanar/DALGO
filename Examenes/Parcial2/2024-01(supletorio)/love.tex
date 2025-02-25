@@ -1,0 +1,59 @@
+\newpage
+\subsection*{Mariposas}
+
+Con la llegada de la primavera, los campos se adornan con coloridas flores, atrayendo a
+una multitud de mariposas. No todas las especies tienen la misma suerte en encontrar
+hábitats adecuados. Como consecuencia, muchas parejas de mariposas ahora habitan prados
+separados. Naturalmente, se esfuerzan por reunirse tan a menudo como sea posible. Para
+facilitar esto, las mariposas han entrado en negociaciones con los vientos. En lugar de
+seguir una ruta fija de un prado a otro, el camino se determina seleccionando un número
+entero al azar entre 1 y R inclusive, con todos los números igualmente probables.
+Desafortunadamente, este proceso se repite varias veces cuando no hay una corriente de
+aire directa entre los prados donde reside una pareja. Esto hace que la distancia total de
+un viaje sea bastante impredecible. Ayuda a las parejas de mariposas a determinar la
+probabilidad de que una de ellas pueda alcanzar el otro prado. Dado el número de prados y
+una lista de corrientes de aire directas, se supone que tu programa debe procesar una
+lista de parejas. Para cada pareja, conoces sus capacidades de vuelo y dónde residen. Por
+supuesto, siempre elegirán la ruta con la distancia esperada más baja. Tal ruta existe
+entre cualquier par de prados.
+
+\subsubsection*{Entrada}
+
+La primera línea contiene el número de casos de prueba que siguen. Cada caso de prueba
+comienza con una línea que contiene el número N de prados $(1 \leq N \leq 100)$, seguido de la
+distancia máxima R que una mariposa puede volar de una vez $(1 \leq R \leq 30)$. Las siguientes N
+líneas contienen N caracteres cada uno. El j-ésimo carácter en la i-ésima línea es "Y" si
+hay una corriente de aire directa entre los prados i y j, pero "N" en caso contrario. El
+j-ésimo carácter en la i-ésima línea siempre es el mismo que el carácter i-ésimo en la
+j-ésima línea. El j-ésimo carácter en la línea j-ésima siempre es "N". Cada caso de prueba
+continúa con el número C de pares de mariposas en una línea por sí misma $(1 \leq C \leq 1000)$.
+Luego, para cada par, hay una línea que contiene tres enteros a, b y d. Estos números
+indican que una de ellas reside en el prado a, la otra en el prado b $(1 \leq a, b \leq N, a \not =
+b)$, y la distancia máxima que pueden volar es d $(1 \leq d \leq 10000)$.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Entrada y Salida}
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \textbf{Entrada} & \textbf{Salida} \\
+        \hline
+        2 & Caso 1 \\
+        3 4 & 0.250000 \\
+        NYY & Caso 2 \\
+        YNY & 0.795918 \\
+        YYN & 0.341108 \\
+        1 & \\
+        1 3 1 & \\
+        4 7 & \\
+        NYNN & \\
+        YNYN & \\
+        NYNY & \\
+        NNYN & \\
+        2 & \\
+        1 3 10 & \\
+        1 4 10 & \\
+        \hline
+    \end{tabular}
+    \label{tab:entrada_salida}
+\end{table}

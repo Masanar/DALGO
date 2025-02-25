@@ -1,0 +1,135 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[left=0.2in, top=0.2in, right=0.2in]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Parcial 2	\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: \today 	\hfill  2023-20		\hfill Nota máxima: 60}
+\par 
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+
+\begin{questions}
+	\pointsdroppedatright
+	\question  \textbf{(15pts)} Suponga que aparte de la capacidad de los caminos la red 
+    de flujo se tiene \textbf{capacidad en los nodos}. Es decir, para cada nodo $n$, se tiene un
+    limite $l(n)$ que limita cuanto flujo puede pasar por $n$. Proponga como transformar
+    una red de flujo $G=(V,E)$ con capacidad en nodos a una red de flujo equivalente 
+    $G'=(V',E')$ que no tiene capacidad en los nodos, de tal forma que el flujo maximo
+    de $G$ y $G'$ es el mismo. Ademas explique cuantos nodos y caminos tiene $G'$ 
+
+
+    \question  \textbf{(25pts)}  Para los siguiente se espera una argumentación valida basada
+    en la teoria vista en clase/bibliografía del curso. Para la calificación de estos ejercicios
+    no hay punto medio, si tiene el punto completo y correcto tiene el punto completo, cero en cualquier
+    otro caso.
+	\begin{parts}
+        \part \textbf{(10pts)} De un ejemplo de un grafo dirigido con pesos negativos para
+        el cual Dijsktra produce una respuesta incorrecta, \textbf{justifique por que pasa esto}. 
+        \part \textbf{(15pts} Suponga que se  da un grafo dirigido cargado 
+        $G=(V,E)$, en el cual los caminos que salen del nodo s pueden tener 
+        pesos negativos, mientras que los demás pesos son no negativos, 
+        y no existen ciclos de peso negativo. Justifique que el algoritmo de Dijkstra 
+        encuentra correctamente los caminos más cortos desde $s$ en este grafo.
+    \end{parts}
+	\question \textbf{(20pts)} 
+    Eres parte de un grupo de $(n)$ guerrilleros armados con dispositivos de comunicación 
+    móviles. Tienes información que deseas compartir con todos en el grupo. El problema 
+    es que ninguno de ustedes está en el mismo lugar y deben comunicarse solo usando 
+    los dispositivos móviles. Lo complicado es que debido a las represarías del estado opresor, sus fondos para
+    pagar las facturas de los dispositivos se han agotado, así que deben distribuir la 
+    información llamándose entre ustedes de la manera más económica posible. Llamarás a 
+    varios camaradas, ellos llamarán a algunos de sus camaradas y así sucesivamente 
+    hasta que todos en el grupo hayan recibido la información. Cada uno de ustedes tiene 
+    un proveedor de servicios de comunicación satélital encriptada diferente y conoce el costo de la llamada de 
+    un compañero A a un compañero B, para todas las posibles combinaciones de A y B. 
+    Existen roses entre las diferentes facciones por lo que no todos los camaradas se llevan bien entre sí y algunos nunca llamarán a personas 
+    que no les agraden. La tarea es encontrar la secuencia de llamadas más barata posible 
+    para que la información se propague desde el líder a los otros $n-1$ miembros del grupo 
+    guerrillero.
+
+    Los camaradas de la guerrilla se nombre con los números del 0 al $n-1$. El líder tomo
+    el numero $0$. El tiene una libreta donde tiene la información de los camaradas. En cada 
+    entrada de esa libreta tiene una linea con tres números naturales de la forma $u,v,w$,
+    esta linea significa que el camarada $u$ se puede comunicar con el camarada $v$ con un
+    costo $w$.
+
+    \begin{verbatim}
+        Camaradas: 4
+        Libreta:
+            0 1 10
+            0 2 10
+            1 3 20
+            2 3 30
+        Repuesta: 40
+        --------
+        Camaradas: 4
+        Libreta:
+            0 1 10
+            1 2 20
+            2 0 30
+            2 3 100
+        Repuesta: 130
+        --------
+        Camaradas: 4
+        Libreta:
+            3 1 4
+            3 1 3
+            3 2 3
+            3 2 6
+            1 3 9
+            3 1 5
+            2 0 9
+            0 1 8
+            0 2 8
+            3 1 2
+            2 1 3
+            1 3 7
+            1 3 5
+        Repuesta: 13
+    \end{verbatim}
+
+    Usted es líder de la guerrilla, para acabar con el estado opresor debe proponer un algoritmo 
+    que dado, el numero de camaradas en la guerrilla y el contenido de la libreta responda
+    con el valor del costo mínimo. 
+
+    Debido a que los recursos son limitados, su algoritmo debe correr en tiempo polinomial en el tamaño
+    de la guerrilla. Ademas su algoritmo debe estar escrito en algún lenguaje de programación, una 
+    explicación de la solución no le sirve a la guerrilla. 
+
+    \textit{Cualquier algoritmo visto en clase debe ser implementado.}
+
+    
+
+
+ 
+	
+
+\end{questions}
+\end{document}

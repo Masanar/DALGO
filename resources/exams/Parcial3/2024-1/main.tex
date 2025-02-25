@@ -1,0 +1,90 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[left=0.5in, top=0.5in, right=0.5in]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Parcial 3	\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: Junio 01 	\hfill  2024-10		\hfill Nota máxima: 50}
+\par 
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+\begin{questions}
+    \pointsdroppedatright
+
+    \question \textbf{(+20 pts)} Recuerden que el problema GRAPH-ISOMORPHISM es el problema
+    que, dados dos grafos, requiere una función (si existe) que permita traducir un grafo
+    en el otro. Dicho en palabras coloquiales: los dos grafos tienen las mismas conexiones
+    pero sus nodos se llaman diferente.
+    \begin{itemize}
+        \item (\textbf{+5 pts}) Describa en detalle el problema de decisión relacionado.
+
+        \item (\textbf{+5 pts}) El problema de decisión está en NP, por lo tanto, existe
+        un algoritmo $A(p,c)$ que, dada una pregunta $p$ y un certificado $c$, decide $p$.
+        Describa cómo sería un certificado $c$ para este problema.
+
+        \item (\textbf{+10 pts}) Para que el problema esté en NP, $A$ debe correr en
+        tiempo polinomial. Describa cómo debería ser este algoritmo. \textbf{No es
+        necesario que utilice código, pero les recomiendo que sea extremadamente claro con
+        la forma en la que va a describir este algoritmo. Si no es claro puede perder el
+        punto}.
+    \end{itemize}
+
+    \question \textbf{(+15 pts)} Bill propone la siguiente idea para construir un
+    recorrido aproximado del TSP en un grafo con función de costo que satisface la
+    desigualdad triangular:
+    \begin{enumerate}
+        \item Comienza con un ciclo trivial que consiste en un solo nodo elegido
+        arbitrariamente.
+        \item En cada paso, identifica el nodo $u$ que no está en el ciclo pero cuya
+        distancia a cualquier nodo del ciclo es mínima.
+        \item Suponga que el nodo en el ciclo que está más cerca de $u$ es el nodo $v$.
+        \item Extienda el ciclo para incluir a $u$ insertando $u$ justo después de $v$.
+        \item Repita hasta que todos los nodo estén en el ciclo.
+    \end{enumerate}
+
+    \textbf{Responda las siguientes preguntas con una argumentación válida (si no hay 
+	argumentación, no es válida la respuesta). No hay puntos intermedios:
+	 o tienen bien la pregunta o la tienen mal.}
+    \begin{itemize}
+        \item (\textbf{+8 pts}) ¿Es posible implementar dicho algoritmo en tiempo
+        polinomial?
+        \item (\textbf{+7 pts}) ¿Realmente el algoritmo da una solución aproximada para
+        TSP?  
+        % \item (\textbf{+2 pts}) Si fuera un algoritmo aproximado, ¿cuál es la cota de
+        % aproximación?
+    \end{itemize}
+
+    \question \textbf{(+10 pts)} Basado en técnicas vistas en clase, implemente un
+    algoritmo (\textbf{CÓDIGO: Python, Java...}) para imprimir todas las secuencias
+    válidas (es decir, correctamente abiertas y eventualmente cerradas) de $n$ pares de
+    paréntesis. \textbf{(5pts)} ¿Cual es la complejidad del algoritmo?
+\end{questions}
+
+
+\end{document}

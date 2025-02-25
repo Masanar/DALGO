@@ -1,0 +1,84 @@
+\hrule
+\section*{Autopistas}
+
+La nación isleña de Flatopia es completamente plana. Desafortunadamente, Flatopia tiene un
+sistema de autopistas públicas muy deficiente. El gobierno de Flatopia es consciente de
+este problema y ya ha construido una serie de autopistas que conectan algunas de las
+ciudades más importantes. Sin embargo, aún hay algunas ciudades a las que no se puede
+llegar a través de una autopista. Es necesario construir más autopistas para que sea
+posible conducir entre cualquier par de ciudades sin salir del sistema de autopistas.
+
+Las ciudades de Flatopia están numeradas del 1 al \(N\) y la ciudad \(i\) tiene una
+posición dada por las coordenadas cartesianas \((x_i, y_i)\). Cada autopista conecta
+exactamente dos ciudades. Todas las autopistas (tanto las originales como las que se
+construirán) siguen líneas rectas, y por lo tanto, su longitud es igual a la distancia
+cartesiana entre las ciudades. Todas las autopistas se pueden usar en ambas direcciones.
+Las autopistas pueden cruzarse libremente entre sí, pero un conductor solo puede cambiar
+de autopista en una ciudad que esté en el extremo de ambas autopistas.
+
+El gobierno de Flatopia quiere minimizar el costo de construir nuevas autopistas. Sin
+embargo, quieren garantizar que cada ciudad sea alcanzable por autopista desde cualquier
+otra ciudad. Dado que Flatopia es tan plana, el costo de una autopista es siempre
+proporcional a su longitud. Por lo tanto, el sistema de autopistas menos costoso será
+aquel que minimice la longitud total de las autopistas nuevas.
+
+\section*{Entrada}
+
+La primera línea de la entrada consiste en un número entero que indica el número de casos
+de prueba. Luego hay una línea en blanco, y los conjuntos de datos están separados por una
+línea en blanco.
+
+Cada caso de prueba consta de dos partes. La primera parte describe todas las ciudades en
+el país, y la segunda parte describe todas las autopistas que ya se han construido.
+
+La primera línea del caso de prueba contiene un único entero \(N\) (\(1 \leq N \leq
+750\)), que representa el número de ciudades. Las siguientes \(N\) líneas contienen cada
+una dos enteros, \(x_i\) y \(y_i\), separados por un espacio. Estos valores dan las
+coordenadas de la ciudad \(i\)-ésima (para \(i\) de 1 a \(N\)). Las coordenadas tendrán un
+valor absoluto no mayor a 10000. Cada ciudad tiene una ubicación única.
+
+La siguiente línea contiene un único entero \(M\) (\(0 \leq M \leq 1000\)), que representa
+el número de autopistas existentes. Las siguientes \(M\) líneas contienen cada una un par
+de enteros separados por un espacio. Estos dos enteros representan un par de números de
+ciudades que ya están conectadas por una autopista. Cada par de ciudades está conectado
+por a lo sumo una autopista.
+
+\section*{Salida}
+
+Para cada caso de prueba, escribe en el archivo de salida una línea por cada nueva
+autopista que debería construirse para conectar todas las ciudades con la menor longitud
+total posible de autopistas nuevas. Cada autopista debe ser presentada imprimiendo los
+números de las ciudades que conecta, separados por un espacio.
+
+Si no es necesario construir nuevas autopistas (todas las ciudades ya están conectadas),
+el archivo de salida debe contener una línea con la frase ‘No new highways need’.  Imprime
+una línea en blanco entre los casos de prueba.
+
+\textbf{Ejemplo de Entrada}
+\begin{verbatim}
+1
+
+9
+1 5
+0 0
+3 2
+4 5
+5 1
+0 4
+5 2
+1 2
+5 3
+3
+1 3
+9 7
+1 2
+\end{verbatim}
+
+\textbf{Ejemplo de Salida}
+\begin{verbatim}
+1 6
+3 7
+4 9
+5 7
+8 3
+\end{verbatim}

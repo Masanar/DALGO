@@ -1,0 +1,104 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[left=0.8in, top=0.7in, total={6.2in,8in}]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Parcial 1	\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: 09/Sep 	\hfill  2022-20		\hfill Nota máxima: 50}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+% {\small \bfseries 	Attempt any five questions }
+
+\begin{questions}
+	\pointsdroppedatright
+	\question \textbf{(12pts)} Tenga en cuenta la siguiente especificación:
+	\begin{lstlisting}
+    fun ArrayR (a:array [0,n) of real, i:nat, j:nat)
+        var s,m1,m2,k : nat
+        {0 <= i <= j < n}
+        s:= i + j
+        if 
+            s mod 2 = 0 -> m1,m2:= s/2 - 1, s/2+1
+            [] s mod 2 = 1 -> m1,m2:= (s - 1)/2, (s+1)/2
+        fi
+        if
+            i = j ->  skip
+        [] 
+            i != j -> ArrayR(a, i, m1);
+                         ArrayR(a, m2, j);
+                         k:=0
+            do i+k <= m1 -> 
+                a[i+k],a[m2+k],k:=a[m2+k],a[i+k],k+1
+            od
+        fi
+    \end{lstlisting}
+    \begin{parts}
+        \part[] \textbf{(3pts)}La función \verb|ArrayR| recibe un arreglo de reales y dos índices \verb|i,j|. Explique que hace esta función.
+        \part[] \textbf{(9pts)} Suponga que en la maquina donde se ejecuta \verb|ArrayR| la operación de asignación tiene costo $C_0$, las comparaciones $C_1$, las operaciones multiplicativas (multiplicación, división, modulo) $C_3$ y las operaciones aditivas (suma y resta) $C_4$. Calcule la función de costo.
+    \end{parts}
+    \newpage
+	\question \textbf{(14pts)} Tenga en cuenta la siguiente especificación:
+	\begin{lstlisting}
+    fun SUM (a:array [0,n) of real, i:nat, j:nat, acc:nat)
+        var r : nat
+        {0 <= i <= j < n and acc >= 0 }
+        if
+            i = j -> r := acc;  skip
+        [] 
+            i != j -> 
+                if j mod 2 = 0 -> SUM(a,i,j-1, acc + a[j])
+                [] j mod 1 = 1 -> SUM(a,j,j-1, acc)
+                fi
+        fi
+    \end{lstlisting}
+    \begin{parts}
+        \part[] \textbf{(3pts)} La función \verb|SUM| recibe un arreglo de reales, dos índices \verb|i,j| y numero natural \verb|acc|. Explique que hace esta función.
+        \part[] \textbf{(11pts)}Suponga que en la maquina donde se ejecuta \verb|ArrayR| la operación de asignación tiene costo $C_0$, las comparaciones $C_1$, las operaciones multiplicativas (multiplicación, división, modulo) $C_3$ y las operaciones aditivas (suma y resta) $C_4$. Calcule la función de costo y \textbf{calcule al complejidad temporal}.
+    \end{parts}
+	\question \textbf{(14pts)}Pruebe: 
+	\begin{parts} 
+	    \part[] \textlbrackdbl \\
+	            \quad$\bm{var} \ \ x,y : int;$ \\
+	            \quad$\{true\}$\\
+	            \quad\quad$x,y := y*y, x*x$ \\
+	            \quad\quad$\bm{if} \ \ x \leq y \rightarrow y   :=  y-x$ \\
+	            \quad\quad$[] \ y \leq x  \rightarrow x := x-y$ \\
+	            \quad\quad$\bm{fi}$ \\
+	            \quad$\{ 0 \leq x \wedge 0 \leq y  \}$ \\ \textrbrackdbl
+	\end{parts}
+	\question \textbf{(10pts)} Describir los datos de entrada, los datos de salida y especificar en forma de predicado de lógica proposicional o lógica de primer orden la precondición y la postcondición para los siguientes problemas:
+	\begin{parts}
+		\part{} Dado un arreglo $a$ de números naturales, determinar si los elementos de $a$ cumplen que todo índice impar del arreglo $a$ tiene como elemento un numero primo, diferente para cada índice. Todo índice par de $a$ tiene como elemento a un entero de la forma $2^i$ ,para algún i. Además la suma de los elementos de $a$ es un numero de la forma $2^k + 1$, para algún $k$
+	\end{parts}
+	
+        
+\end{questions}
+\end{document}

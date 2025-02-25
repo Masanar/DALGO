@@ -1,0 +1,80 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[left=0.2in, top=0.2in, right=0.2in]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Parcial 2 (Supletorio)	\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: * Octubre 2024	\hfill  2024-02		\hfill Nota máxima: 100}
+\par 
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+
+\begin{questions}
+	\pointsdroppedatright
+	\question \textbf{(25 pts)} El algoritmo de \verb|Floyd-Warshall| recibe un grafo y
+	devuelve una matriz de distancias mínimas entre todos los pares de nodos. Proponga una
+	modificación al algoritmo de \verb|Floyd-Warshall| que permita determinar el camino
+	más corto entre dos nodos dados sin cambiar su complejidad. \textbf{Explique} cómo
+	modificar el algoritmo y proporcione un ejemplo. Puede mostrar el código modificado o
+	usar palabras para explicar la modificación.
+
+	\question \textbf{(25 pts)} El profesor Adam tiene tres hijos que, lamentablemente, no
+	se llevan bien. El problema es tan grave que los tres viven en casas separadas y
+	asisten a escuelas distintas. Además, se niegan a caminar juntos hacia la escuela y
+	cada uno se rehúsa a transitar por cualquier calle por la que el otro haya pasado ese
+	día. Los niños no tienen problema en que sus caminos se crucen en una esquina.
+	Afortunadamente, tanto las casas como las escuelas están en esquinas, pero más allá de
+	eso, el profesor no está seguro de si será posible que los tres puedan asistir a la
+	misma escuela. El profesor tiene un mapa de la ciudad. \textbf{Explique} cómo formular
+	el problema de determinar si los hijos pueden llegar a las escuelas como un problema
+	de flujo máximo.
+	\textbf{La explicación debe ser clara y concisa; de lo contrario, se podría perder el punto.}
+
+	\question \textbf{(50 pts)} Proponga una implementación (\texttt{Java,Python}) para la
+	función \verb|flatopia| que resuelva un caso del problema de las \textbf{Autopistas}.
+	La función recibe como entrada el número de ciudades, las coordenadas de cada ciudad,
+	el número de autopistas y, finalmente, una lista de las autopistas ya construidas. La
+	función debe resolver el caso, retornando una lista de autopistas que deben
+	construirse para conectar todas las ciudades. Si no es necesario construir nuevas
+	autopistas, retorne una lista vacía.
+
+	\begin{lstlisting}
+	flatopia(number_of_cities: int, cities: list[(int, int)], 
+		number_of_highways: int, highways: list[(int, int)]) -> list[(int, int)]
+	\end{lstlisting}
+
+	Para la implementación, puede suponer que ya ha implementado la estructura de
+	\verb|Union-Find|. Después de construir el grafo, la complejidad de la solución no
+	debe superar $O(E \log(E))$; \textbf{de lo contrario, no se validará el punto}.
+
+	
+
+\end{questions}
+\input{air.tex}
+\end{document}

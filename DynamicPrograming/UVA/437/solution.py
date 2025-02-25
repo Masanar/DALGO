@@ -68,6 +68,6 @@ if __name__ == "__main__":
 
         current_list_blocks = read_list_block(current_number_of_blocks)
         current_result = lis(current_list_blocks)
-        print(f'Case {counter}: maximum height = {current_result}')
+        print(f'Case {counter}: maxima altura = {current_result}')
 
         current_number_of_blocks = int(sys.stdin.readline().strip())

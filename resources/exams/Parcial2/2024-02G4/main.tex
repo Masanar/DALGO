@@ -1,0 +1,83 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[left=0.2in, top=0.2in, right=0.2in]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Parcial 2	\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: 22 Octubre 2024	\hfill  2024-02		\hfill Nota máxima: 100}
+\par 
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+
+\begin{questions}
+	\pointsdroppedatright
+
+	\question \textbf{(25pts)} Mateo propone que una forma de saber si un grafo (con pesos
+	positivos y sin nodos con conexiones a sí mismos) contiene ciclos es tomando la matriz
+	de adyacencia del grafo, reemplazar la diagonal principal por $-1$ y ejecutar el
+	algoritmo de Floyd-Warshall. Si en la diagonal de la matriz resultante hay un valor
+	diferente de $-1$, es porque el grafo contiene ciclos. Explique por qué esta propuesta
+	es correcta o incorrecta. Si es incorrecta, proponga una corrección.
+
+	\question \textbf{(25pts)} El profesor Adam tiene dos hijos que, lamentablemente, no
+	se llevan bien. El problema es tan grave que no solo se niegan a caminar juntos hacia
+	la escuela, sino que además cada uno se rehúsa a caminar por cualquier calle por la
+	que el otro haya pasado ese día. Los niños no tienen problema en que sus caminos se
+	crucen en una esquina. Afortunadamente, tanto la casa del profesor como la escuela
+	están en esquinas, pero más allá de eso, no está seguro de si será posible que ambos
+	vayan a la misma escuela.  El profesor tiene un mapa de su ciudad. \textbf{Explique},
+	cómo formular el problema de determinar si ambos hijos pueden ir a la misma escuela
+	como un problema de máximo flujo.
+	\textbf{Su explicación debe ser clara y concisa, de lo contrario pondrá perder el punto.}
+
+
+
+	\question \textbf{(50pts)} Proponga una implementación (\verb|Java,Python|) para la
+	función \verb|ways| que soluciona un caso del problema \textbf{¿Queda una segunda
+	opción?}. La función recibe como parámetro el grafo (lista de aristas) asociado a la
+	red del caso de prueba. La función debe dar solución al caso retornando el string
+	correspondiente; inclusive si hay una respuesta numérica, la función debe retornar el
+	string adecuado.
+
+	\begin{lstlisting}
+	ways(network: list[(int, int, int)]) -> str
+	\end{lstlisting}
+
+	Para la implementación puede suponer que ya implemento los algoritmos: \verb|DFS, BFS, Union-Find|, \verb|Floyd-Warshall| y \verb|Edmonds-Karp|. Sin embargo, se espera que
+	quede claro cuáles son las entradas y salidas de cada algoritmo que decida utilizar.
+	\textbf{Si esto no es claro o es incorrecto, su punto no será válido}. La complejidad
+	de la solución no debe ser mayor a $O(EV)$, \textbf{de lo contrario no será válido el
+	punto!}.
+
+	
+	
+
+\end{questions}
+\input{air.tex}
+\end{document}

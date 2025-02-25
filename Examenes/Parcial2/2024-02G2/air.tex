@@ -1,0 +1,52 @@
+\newpage
+\subsection*{Aeropuertos}
+
+El gobierno de una nación en desarrollo quiere mejorar el transporte en una de sus áreas
+más inaccesibles, en un intento de atraer inversión. La región consiste en varios lugares
+importantes que deben tener acceso a un aeropuerto.
+
+Por supuesto, una opción es construir un aeropuerto en cada uno de estos lugares, pero
+podría resultar más barato construir menos aeropuertos y conectar el resto de las
+ubicaciones mediante carreteras. Dado que estas son carreteras de larga distancia que
+conectan importantes ubicaciones en el país (por ejemplo, ciudades, grandes aldeas, áreas
+industriales), todas las carreteras son de doble sentido. Además, puede haber más de una
+carretera directa posible entre dos áreas. Esto se debe a que puede haber varias maneras
+de conectar dos áreas (por ejemplo, una carretera atraviesa un túnel en una montaña
+mientras que la otra rodea la montaña, etc.) con costos potencialmente diferentes.
+
+Se considera que una ubicación tiene acceso a un aeropuerto si contiene un aeropuerto o si
+es posible viajar por carretera desde allí a otra ubicación que tenga un aeropuerto. Se te
+proporciona el costo de construir un aeropuerto y una lista de posibles carreteras entre
+pares de ubicaciones y sus costos correspondientes. El gobierno ahora necesita tu ayuda
+para decidir la forma más económica de garantizar que cada ubicación tenga acceso a un
+aeropuerto. El objetivo es facilitar el acceso a los aeropuertos lo más posible, por lo
+que, si existen varias maneras de lograr el costo mínimo, elige la opción que tenga la
+mayor cantidad de aeropuertos.
+
+\subsubsection*{Entrada}
+
+La primera línea de entrada contiene el número entero \(T\) (\(T < 25\)), el número de
+casos de prueba. El resto de la entrada consiste en \(T\) casos.
+
+Cada caso comienza con tres enteros \(N\), \(M\) y \(A\) (\(0 < N \leq 10,000\), \(0 \leq
+M \leq 100,000\), \(0 < A \leq 10,000\)) separados por espacios en blanco. \(N\) es el
+número de ubicaciones, \(M\) es el número de posibles carreteras que se pueden construir,
+y \(A\) es el costo de construir un aeropuerto.
+
+Las siguientes \(M\) líneas contienen cada una tres enteros \(X\), \(Y\) y \(C\) (\(1 \leq
+X, Y \leq N\), \(0 < C \leq 10,000\)), separados por espacios en blanco. \(X\) y \(Y\) son
+dos ubicaciones, y \(C\) es el costo de construir una carretera entre \(X\) y \(Y\).
+
+\subsubsection*{Salida}
+
+El programa debe generar exactamente \(T\) líneas, una por cada caso. Cada línea debe
+tener la forma ‘Caso \#X: Y Z’, donde \(X\) es el número del caso, \(Y\) es el costo
+mínimo de construir carreteras y aeropuertos de manera que todas las ubicaciones tengan
+acceso a al menos un aeropuerto, y \(Z\) es el número de aeropuertos que se deben
+construir. Como se mencionó antes, si hay varias respuestas con costo mínimo, elige
+aquella que maximice el número de aeropuertos.
+
+
+
+
+

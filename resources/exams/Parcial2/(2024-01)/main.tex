@@ -1,0 +1,81 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[left=0.2in, top=0.2in, right=0.2in]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Parcial 2	\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: 19 Abril 2024	\hfill  2024-01		\hfill Nota máxima: 50}
+\par 
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+
+\begin{questions}
+	\pointsdroppedatright
+
+	\question \textbf{(10pts)} Mateo propone que el algoritmo para encontrar el MST de
+	un grafo también permite encontrar el camino de menor peso de entre los nodos del
+	mismo. Según esto, dado el MST para encontrar el camino de menor peso entre dos nodos
+	se sigue el camino dentro del MST. El algoritmo que propone Mateo es valido? De ser
+	valido argumente de lo contrario proponga un contra ejemplo.
+
+	\question  \textbf{(15pts)} Tome solo \textbf{uno} de los siguientes puntos. Se espera
+	una argumentación valida, basada en definiciones, teoremas, axiomas,... mencionados en
+	la bibliografía acerca de las redes de flujo. \textbf{No se espera una demostración,
+	per se. Pero si una argumentación justificada en la teoría.}
+
+	\begin{parts}
+
+        \part Suponga que la red de flujo \verb|G| contiene la arista
+        \verb|(u,v)| se crea un nueva red de flujo \verb|G'| creando un nuevo vértice
+        \verb|x| y sustituyendo \verb|(u,v)| por nuevas aristas \verb|(u,x)| y
+        \verb|(x,v)| tal que \verb|c(u,x)=c(x,v)=c(u,v)|. Demuestre que un flujo máximo en
+        \verb|G'| tiene el mismo valor que un flujo máximo en \verb|G|. 
+
+		\part Suponga que una red de flujo \verb|G =(V,E)| no cumple la
+        suposición de que, para cualquier nodo $v \in V$, el camino $s \rightarrow v
+        \rightarrow t$ se encuentra en la red. Se $u$ un vértice de la red para el cual no
+        se cumple que $s \rightarrow u \rightarrow t$. Demuestre que debe existir un flujo
+        máximo $f$ tal que $f(u,n)=f(v,n)=0$ para todo $n \in V$.
+    \end{parts}
+
+
+	\question \textbf{(20pts)} Solucione el problema \textbf{Aeropuertos}  
+	usando algún algoritmo visto en clase, puede modificarlo de ser necesario, de no ser
+	asi el punto no es valido. Se describe I/O para ejemplificar, si embargo puede asumir
+	que tiene un función auxiliar que le hace la carga de datos, Si decide hacer esto debe
+	estar claro el funcionamiento de dicha función (i.e. entradas y salidas).  Puede
+	usar comentarios para hacer aclaraciones. Presente un \textbf{algoritmo (Java,
+	Python...)} que solucione el problema, no es valida una solución en palabras. 
+	
+	\question \textbf{(5pts)} \textbf{Explique} cual es la complejidad temporal de su
+	algoritmo solución para el ejercicio anterior.
+
+\end{questions}
+\input{air.tex}
+\end{document}

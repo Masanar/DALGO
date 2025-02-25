@@ -1,0 +1,73 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage[left=0.8in, top=0.7in, total={6.2in,8in}]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\input{macros.tex}
+
+\begin{document}
+	%\thispagestyle{empty}
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=1.8\textwidth]{Logosimbolo-uniandes_horizontal.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		{\large \textbf{Ingeniería de Sistemas y Computación} \par
+		\large	Diseño y análisis de algoritmos	\par
+		\small  Profesor: Mateo Sanabria Ardila	\par
+		\small  Parcial supletorio 3	\par
+		}
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Fecha de entrega: \today 	\hfill  2024-10		\hfill Nota máxima: 50}
+\par 
+\vspace{0.15in}
+% {\small \bfseries 	Attempt any five questions }
+
+\begin{questions}
+	\pointsdroppedatright
+	\question \textbf{(+5pts)} Demuestre que la reducción polinomial $\leq_P$ es una relación transitiva.
+	\question \textbf{(+10pts)} Se sabe que es posible demostrar que TSP es NPC usando el problema HAM-CYLE.
+	Para esto se muestra una reduccion polinomial $HAM-CYCLE \leq_p TSP$, y demostrando que TSP
+	pertenece a NP. De argumentos basados en la teoría vista en clase para justificar o 
+	negar la siguiente afirmación, explore consideraciones y puntos importantes para cualquier caso:
+	
+		Lo anterior quiere decir que TSP también se puede reducir a HAM-CYCLE y en generar
+		cualquier problema NPC se puede reducir  a cualquier problema NPC. Lo mismo se puede 
+		decir para los problemas NP.
+
+    \question \textbf{(+16pts)} Se sabe que si $P \not = NP$ entonces para cualquier constante 
+	$1 \leq p$, no existe un algoritmo aproximado en tiempo polinomial  con ratio de aproximación 
+	$p$ para el problema generar de TSP. 
+	\begin{itemize}
+		\item \textbf{(+8pts)} Muestre como en tiempo polinomial se puede traducir una 
+		instancia del problema de TSP en una instancia donde la función de costo satisface la desigualdad
+		triangular. Las dos instancias deben tener el mismo conjunto de tours óptimos. 
+		\item \textbf{(+8pts)} Asuma que $P \not = NP$ explique como esto no contradice el teorema mencionado. 
+	\end{itemize}
+    \question \textbf{(+14pts)} Proponga un algoritmo (\textit{Java,Python,C,...}) basado en alguna heuristica
+	vista en clase que solucione el siguiente problema, la entrada del algoritmo debe ser \textit{n:int} 
+	y debe mostrar por consola la respuesta adecuada:
+
+	El conjunto $\{1, 2, 3, ..., n\}$ contiene un total de $n!$ permutaciones distintas. 
+	Al enlistar y etiquetar todas las permutaciones en orden lexicográfico ascendente, 
+	obtenemos la siguiente secuencia para n = 3:
+		\[ 123, 132, 213, 231, 312, 321 \]
+	Proporcione un algoritmo eficiente que devuelva la k-ésima de las $n!$ permutaciones 
+	en esta secuencia, dados los valores de n y k. Para ser eficiente, no debería 
+	construir las primeras $k-1$ permutaciones en el proceso. \textbf{(+5pts)} Cual es la complejidad de la solución.
+	
+
+\end{questions}
+\end{document}
